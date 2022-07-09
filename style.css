@@ -1,7 +1,214 @@
 body {
-    background-color: rgb(86, 100, 162);
+    background-color: rgb(0, 4, 53);
+    margin: 0;;
+    color: antiquewhite;
 }
 
+
+
+/* ---- HEADER : background ---- */
+.header {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.header_filter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 -50px 100px 200px black;
+    background-color: rgba(0, 0, 0, 0.685);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.header_box {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+}
+
+.header_box img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.header_town,
+.header_place,
+.header_car {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+
+}
+
+
+
+/* ---- HEADER : header ---- */
+.header_text {
+    position: absolute;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.header_text h5 {
+    text-align: end;
+    font-size: 20px;
+}
+.header_text h5::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    right: 190px;
+    top: 45px;
+}
+
+.header_text h2 {
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 0 0 10px black;
+    margin: 10px;
+}
+.header_text h2 span {
+    color:coral;
+}
+
+
+
+/* ---- HEADER : burger ---- */
+.navigation_ico {
+    z-index: 2;
+    position: fixed;
+    width: 60px;
+    height: 45px;
+    left: 40px;
+    top: 40px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+.navigation_ico:hover {opacity: 1; cursor: pointer}
+
+.navigation_ico span {
+    position: absolute;
+    background-color: aliceblue;
+    width: 100%;
+    height: 10%;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: width 0.5s;
+}
+
+.navigation_ico::before, 
+.navigation_ico::after {
+    content: "";
+    position: absolute;
+    background-color: aliceblue;
+    width: 100%;
+    height: 10%;
+    transition: transform 0.3s;
+}
+.navigation_ico::before {
+    bottom: 0;
+    left: 0;
+}
+.navigation_ico::after {
+    top:0;
+}
+
+.navigation_ico._active span {
+    width: 0%;
+}
+.navigation_ico._active::before {
+    top: 50%;
+    transform: rotate(45deg);
+}
+.navigation_ico._active::after {
+    top: 50%;
+    transform: rotate(-45deg);
+}
+
+
+
+/* ---- HEADER : menu ---- */
+.navigation_content {
+    opacity: 0;
+    position: fixed;
+    top: 15%;
+    left: -30%;
+    z-index: 2;
+    list-style: none;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.673);
+    transition: left 1s, opacity 2s;
+}
+.navigation_content li{
+    padding: 15px 40px;
+}
+.navigation_content a{
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+}
+.navigation_content._active {
+    opacity: 1;
+    left: 10%;
+}
+
+
+
+/* ---- HEADER : logo ---- */
+.header_logo {
+    position: absolute;
+    right: 100px;
+    z-index: 1;
+}
+
+.header_logo img {
+    filter: invert();
+    width: 100px;
+    margin: auto;
+    display: block;
+    transition: filter 0.5s;
+}
+.header_logo img:hover{filter: invert(0); cursor: pointer;}
+.car_light_left {
+    content: "";
+    width: 7px;
+    position: absolute;
+    left: 30%;
+    bottom: 20%;
+    box-shadow: 0 0 10px 10px rgb(210, 238, 255);
+    border-radius: 100%;
+    transition: box-shadow 1s;
+}
+.car_light_right {
+    content: "";
+    width: 7px;
+    position: absolute;
+    right: 30%;
+    bottom: 20%;
+    box-shadow: 0 0 10px 10px rgb(210, 238, 255);
+    border-radius: 100%;
+    transition: box-shadow 1s;
+}
+
+
+
+
+
+
+/* ---- SLIDER_BeforeAfter ---- */
 .box_slider_ba {
     width: 100%;
 }
