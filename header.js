@@ -1,7 +1,7 @@
 const town = document.querySelector('.header_town')
 const place = document.querySelector('.header_place')
 const car = document.querySelector('.header_car')
-const header = document.querySelector('.header')
+const header = document.querySelector('.header-site')
 
 const header_width = header.getBoundingClientRect().right
 const header_height = header.getBoundingClientRect().bottom

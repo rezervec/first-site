@@ -26,5 +26,3 @@ slider.addEventListener('mousemove', (e) =>{
         roller.style.left = `${e.pageX - slider.getBoundingClientRect().left}px`;
     }
 });
-
-console.log(window.innerWidth)
