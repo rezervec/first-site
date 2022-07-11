@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;500&family=Play&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:ital@1&family=Fira+Sans+Condensed:wght@300;500&family=Play&family=Rubik&display=swap');
+/* 
+'Finlandica', sans-serif; 400 italic
+'Fira Sans Condensed', sans-serif; 300,500
+'Play', sans-serif; 400
+'Rubik', sans-serif; 400
+*/
+
 
 body {
     background-color: rgb(0, 0, 0);
@@ -7,7 +14,7 @@ body {
 }
 
 .headlines-site {
-    margin-top: 70px;
+    margin: 70px;
     font-family: 'Play', sans-serif;
     text-transform: uppercase;
     font-size: 40px;
@@ -32,9 +39,11 @@ body {
     padding: 15px 40px;
 }
 .navigation_content a{
+    font-family: 'Play', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
     text-decoration: none;
     color: antiquewhite;
-    font-size: 20px;
     font-weight: bold;
     display: block;
 }
@@ -98,6 +107,7 @@ body {
 }
 
 .header_text h5 {
+    font-family: 'Finlandica', sans-serif;
     text-align: end;
     font-size: 20px;
 }
@@ -112,8 +122,9 @@ body {
 }
 
 .header_text h2 {
+    font-family: 'Rubik', sans-serif;
     text-align: center;
-    font-size: 40px;
+    font-size: 35px;
     text-shadow: 0 0 10px black;
     margin: 10px;
 }
@@ -229,7 +240,6 @@ body {
 
 /* ---- SERVICES ---- */
 .services {
-    margin-top: 100px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 3%;
