@@ -1,0 +1,604 @@
+@import url("https://fonts.googleapis.com/css2?family=Finlandica:ital@1&family=Fira+Sans+Condensed:wght@300;500&family=Play&family=Rubik&display=swap");
+/* 
+'Finlandica', sans-serif; 400 italic
+'Fira Sans Condensed', sans-serif; 300,500
+'Play', sans-serif; 400
+'Rubik', sans-serif; 400
+*/
+body {
+  background-color: rgb(0, 0, 0);
+  margin: 0;
+  color: antiquewhite;
+}
+
+.headlines-site {
+  margin: 70px;
+  font-family: "Play", sans-serif;
+  text-transform: uppercase;
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 2px 0 5px rgb(0, 30, 255), -2px 0 5px rgb(255, 170, 0);
+}
+
+/* ---- MENU ---- */
+.navigation_content {
+  opacity: 0;
+  position: fixed;
+  top: 15%;
+  left: -30%;
+  z-index: 2;
+  list-style: none;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.673);
+  transition: left 1s, opacity 2s;
+}
+
+.navigation_content li {
+  padding: 15px 40px;
+}
+
+.navigation_content a {
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-decoration: none;
+  color: antiquewhite;
+  font-weight: bold;
+  display: block;
+}
+
+.navigation_content._active {
+  opacity: 1;
+  left: 10%;
+}
+
+/* ---- HEADER : background ---- */
+.header-site {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.header_filter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 -50px 100px 200px black;
+  background-color: rgba(0, 0, 0, 0.685);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.header_box {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+}
+
+.header_box img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.header_town,
+.header_place,
+.header_car {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+}
+
+/* ---- HEADER : header ---- */
+.header_text {
+  position: absolute;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.header_text h5 {
+  font-family: "Finlandica", sans-serif;
+  text-align: end;
+  font-size: 20px;
+}
+
+.header_text h5::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  right: 190px;
+  top: 45px;
+}
+
+.header_text h2 {
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+  font-size: 35px;
+  text-shadow: 0 0 10px black;
+  margin: 10px;
+}
+
+.header_text h2 span {
+  color: coral;
+}
+
+/* ---- HEADER : burger ---- */
+.navigation_ico {
+  z-index: 2;
+  position: fixed;
+  width: 60px;
+  height: 45px;
+  left: 40px;
+  top: 40px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.navigation_ico:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.navigation_ico span {
+  position: absolute;
+  background-color: aliceblue;
+  width: 100%;
+  height: 10%;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: width 0.5s;
+}
+
+.navigation_ico::before,
+.navigation_ico::after {
+  content: "";
+  position: absolute;
+  background-color: aliceblue;
+  width: 100%;
+  height: 10%;
+  transition: transform 0.3s;
+}
+
+.navigation_ico::before {
+  bottom: 0;
+  left: 0;
+}
+
+.navigation_ico::after {
+  top: 0;
+}
+
+.navigation_ico._active span {
+  width: 0%;
+}
+
+.navigation_ico._active::before {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.navigation_ico._active::after {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+/* ---- HEADER : logo ---- */
+.header_logo {
+  position: absolute;
+  right: 100px;
+  z-index: 1;
+}
+
+.header_logo img {
+  filter: invert(1);
+  width: 100px;
+  margin: auto;
+  display: block;
+  transition: filter 0.5s;
+}
+
+.header_logo img:hover {
+  filter: invert(0);
+  cursor: pointer;
+}
+
+.car_light_left {
+  content: "";
+  width: 7px;
+  position: absolute;
+  left: 30%;
+  bottom: 20%;
+  box-shadow: 0 0 10px 10px rgb(210, 238, 255);
+  border-radius: 100%;
+  transition: box-shadow 1s;
+}
+
+.car_light_right {
+  content: "";
+  width: 7px;
+  position: absolute;
+  right: 30%;
+  bottom: 20%;
+  box-shadow: 0 0 10px 10px rgb(210, 238, 255);
+  border-radius: 100%;
+  transition: box-shadow 1s;
+}
+
+/* ---- BODY-SITE ---- */
+/* ---- SERVICES ---- */
+.services {
+  margin: auto 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 3%;
+  justify-content: center;
+}
+
+.services div {
+  overflow: hidden;
+  position: relative;
+  border-radius: 5%;
+}
+
+.services div img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.service_cleaning img {
+  filter: blur(1px) grayscale(100%);
+  transition: filter 1s;
+}
+
+.service_cleaning:hover img {
+  filter: none;
+}
+
+.service_painting img {
+  transition: filter 1s;
+}
+
+.service_painting:hover img {
+  filter: sepia(100%);
+}
+
+.service_toning-lamps::before {
+  content: "";
+  position: absolute;
+  width: 53%;
+  height: 62%;
+  left: 27%;
+  top: 30%;
+  transform: rotate(35deg);
+  border-radius: 80%;
+  opacity: 0;
+  background-color: black;
+  box-shadow: 0 0 1em 0.5em black;
+  transition: opacity 1s;
+  z-index: 1;
+}
+
+.service_toning-lamps:hover::before {
+  opacity: 0.8;
+}
+
+.service_toning::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgb(0, 0, 0);
+  transition: opacity 1s;
+  -webkit-clip-path: polygon(3% 0%, 100% 0%, 100% 48%, 38% 47%, 22% 42%);
+          clip-path: polygon(3% 0%, 100% 0%, 100% 48%, 38% 47%, 22% 42%);
+  z-index: 1;
+}
+
+.service_toning:hover::before {
+  opacity: 0.8;
+}
+
+.service_toning img {
+  filter: blur(2px);
+  transition: filter 1s;
+}
+
+.service_toning:hover img {
+  filter: brightness(80%);
+}
+
+@media (min-width: 1159px) {
+  .service_toning::before {
+    -webkit-clip-path: polygon(-1.5% 0%, 100% 0%, 100% 48%, 38% 47%, 22% 42%);
+            clip-path: polygon(-1.5% 0%, 100% 0%, 100% 48%, 38% 47%, 22% 42%);
+  }
+}
+.service_trim-salon {
+  filter: hue-rotate(50deg) grayscale(50%);
+  transition: filter 1s;
+}
+
+.service_trim-salon:hover {
+  filter: none;
+}
+
+.service_xenon::before {
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  border-radius: 20%;
+  top: 38%;
+  right: 24%;
+  background-color: rgb(187, 226, 249);
+  opacity: 0;
+  box-shadow: 0 0 2em 3em rgb(187, 226, 249);
+  transition: opacity 1s;
+  z-index: 1;
+}
+
+.service_xenon:hover::before {
+  opacity: 0.9;
+}
+
+.service_cleaning::after,
+.service_painting::after,
+.service_toning-lamps::after,
+.service_toning::after,
+.service_trim-salon::after,
+.service_xenon::after {
+  font-family: "Fira Sans Condensed", sans-serif;
+  content: attr(alt);
+  position: absolute;
+  width: auto;
+  height: auto;
+  right: 0;
+  bottom: 10%;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 3%;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: bottom 1s, color 1s;
+  z-index: 1;
+}
+
+.service_cleaning:hover::after,
+.service_painting:hover::after,
+.service_toning-lamps:hover::after,
+.service_toning:hover::after,
+.service_trim-salon:hover::after,
+.service_xenon:hover::after {
+  bottom: 80%;
+  color: rgb(255, 155, 118);
+}
+
+.service_cleaning p,
+.service_painting p,
+.service_toning-lamps p,
+.service_toning p,
+.service_trim-salon p,
+.service_xenon p {
+  font-family: "Fira Sans Condensed", sans-serif;
+  position: absolute;
+  margin: 0;
+  left: -100%;
+  bottom: 0;
+  width: 50%;
+  height: auto;
+  border-top-right-radius: 20%;
+  padding: 5%;
+  font-size: auto;
+  font-weight: 300;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: left 1s ease 0.2s;
+  z-index: 1;
+}
+
+.service_cleaning p span,
+.service_painting p span,
+.service_toning-lamps p span,
+.service_toning p span,
+.service_trim-salon p span,
+.service_xenon p span {
+  font-weight: 500;
+}
+
+.service_cleaning:hover p,
+.service_painting:hover p,
+.service_toning-lamps:hover p,
+.service_toning:hover p,
+.service_trim-salon:hover p,
+.service_xenon:hover p {
+  left: 0;
+}
+
+.service_cleaning img,
+.service_painting img,
+.service_toning-lamps img,
+.service_toning img,
+.service_trim-salon img,
+.service_xenon img {
+  -webkit-clip-path: polygon(20% 0%, 100% 0%, 100% 60%, 60% 100%, 0% 100%, 0% 20%);
+          clip-path: polygon(20% 0%, 100% 0%, 100% 60%, 60% 100%, 0% 100%, 0% 20%);
+  transition: all 1s;
+}
+
+.service_cleaning:hover img,
+.service_painting:hover img,
+.service_toning-lamps:hover img,
+.service_toning:hover img,
+.service_trim-salon:hover img,
+.service_xenon:hover img {
+  -webkit-clip-path: polygon(0% 0%, 80% 0%, 100% 20%, 100% 100%, 40% 100%, 0% 60%);
+          clip-path: polygon(0% 0%, 80% 0%, 100% 20%, 100% 100%, 40% 100%, 0% 60%);
+}
+
+/* ---- SLIDER_BeforeAfter ---- */
+.box_slider_ba {
+  width: 100%;
+  display: none;
+}
+
+.slider_ba {
+  background-color: rgb(0, 0, 119);
+  width: 880px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+}
+
+@media (max-width: 1150px) {
+  .slider_ba {
+    height: 300px;
+  }
+}
+.slider_ba_img-down img,
+.slider_ba_img-up img {
+  position: absolute;
+  -o-object-position: 0 0;
+     object-position: 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.slider_ba_roller {
+  position: absolute;
+  background-color: rgba(0, 16, 192, 0.138);
+  width: 3px;
+  height: 100%;
+  top: 0;
+  left: 25%;
+  transition: background 0.5s;
+}
+
+.slider_ba_roller:hover {
+  background: rgba(255, 255, 255, 0.255);
+  cursor: pointer;
+}
+
+.slider_ba_roller img {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.132);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.about {
+  background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.5)), url("/img/about_bg.jpg"), no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+
+.about_box {
+  display: flex;
+  gap: 3%;
+  margin: 0 2%;
+}
+.about_box .about_company {
+  flex: 1 0 50%;
+  margin-top: 40px;
+}
+.about_box .about_company h5 {
+  margin: auto;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-size: 20px;
+  padding: 50px 0;
+}
+.about_box .about_company::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 2px;
+  transform: translate(-50%, 370px);
+  left: 50%;
+  background-color: rgb(255, 229, 202);
+}
+.about_box .about_choice {
+  justify-content: center;
+  flex: 0 0 15%;
+}
+.about_box .about_choice h3 {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+.about_box .about_choice h3:not(:first-child) {
+  margin: 100px 0;
+}
+.about_box .about_choice.right h3:nth-child(1) {
+  text-align: center;
+}
+.about_box .about_choice.right h3:nth-child(2) {
+  text-align: end;
+}
+.about_box .about_choice.left h3:nth-child(1) {
+  text-align: center;
+}
+.about_box .about_choice.left h3:nth-child(2) {
+  text-align: end;
+}
+.about_box .about_nav {
+  transition: color 0.3s;
+}
+.about_box .about_nav:hover {
+  color: rgb(253, 167, 135);
+  cursor: pointer;
+}
+.about_box .about_content {
+  margin: 0 auto 70px auto;
+  width: 70%;
+  height: 300px;
+  position: relative;
+}
+.about_box .about_content div {
+  opacity: 0;
+  transition: opacity 1s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.about_box .about_content div img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(30%);
+  border-radius: 10%;
+}
+.about_box .about_content div p {
+  position: absolute;
+  width: 90%;
+  display: block;
+  height: auto;
+  transform: translate(0, 20%);
+  text-align: center;
+  padding: 5%;
+}/*# sourceMappingURL=style.css.map */
