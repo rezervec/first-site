@@ -601,4 +601,78 @@ body {
   transform: translate(0, 20%);
   text-align: center;
   padding: 5%;
+}
+
+.portfolio {
+  background-color: rgb(23, 88, 88);
+  position: relative;
+  margin: auto;
+  width: 80%;
+  height: auto;
+  display: flex;
+  gap: 20px;
+  justify-content: start;
+  overflow: hidden;
+}
+.portfolio .portfolio_elem {
+  background-color: rgb(49, 61, 82);
+  min-width: 350px;
+  height: 500px;
+  overflow: hidden;
+  transition: transform 1s;
+}
+.portfolio .portfolio_elem .portfolio_main-el {
+  background-color: rgb(123, 36, 36);
+  height: 70%;
+  width: 100%;
+  border-radius: 10%;
+}
+.portfolio .portfolio_elem .portfolio_sub-el {
+  background-color: rgb(42, 84, 163);
+  width: 100%;
+  height: 30%;
+  display: flex;
+  gap: 10px;
+}
+.portfolio .portfolio_elem .portfolio_sub-el div {
+  background-color: cornflowerblue;
+  border: solid 1px;
+  min-width: 120px;
+  height: 70px;
+}
+.portfolio .btn-left {
+  z-index: 1;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translate(0, -50%);
+  height: 70px;
+  width: 70px;
+  background-color: aliceblue;
+  -webkit-clip-path: polygon(100% 0, 30% 50%, 100% 100%, 70% 100%, 0 50%, 70% 0);
+          clip-path: polygon(100% 0, 30% 50%, 100% 100%, 70% 100%, 0 50%, 70% 0);
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+.portfolio .btn-left:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+.portfolio .btn-right {
+  z-index: 1;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translate(0, -50%);
+  height: 70px;
+  width: 70px;
+  background-color: aliceblue;
+  -webkit-clip-path: polygon(30% 0, 100% 50%, 30% 100%, 0 100%, 70% 50%, 0 0);
+          clip-path: polygon(30% 0, 100% 50%, 30% 100%, 0 100%, 70% 50%, 0 0);
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+.portfolio .btn-right:hover {
+  opacity: 0.9;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
