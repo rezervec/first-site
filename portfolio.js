@@ -33,3 +33,10 @@ if ((hidden_elems) > 0) {
 
 console.log(portfolio_elem.length)
 console.log( Math.floor(portfolio_window.clientWidth / portfolio_elem[0].clientWidth) )
+
+
+// const modal_img = document.querySelectorAll('.modal_img')
+
+// modal_img.addEventListener('click', (e) => {
+//     console.log(e.target)
+// });
