@@ -629,14 +629,17 @@ body {
   cursor: pointer;
 }
 .portfolio .portfolio_elem .portfolio_main-el {
-  background: url("/img/portfolio_1.jpg") no-repeat;
-  background-size: cover;
-  background-position-x: center;
   height: 80%;
   width: 100%;
   border-radius: 5%;
   filter: brightness(50%);
   transition: filter 0.5s;
+}
+.portfolio .portfolio_elem .portfolio_main-el img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .portfolio .portfolio_elem .portfolio_main-el:hover {
   filter: none;
@@ -656,20 +659,12 @@ body {
   filter: brightness(50%);
   transition: filter 0.5s;
 }
+.portfolio .portfolio_elem .portfolio_sub-el div img {
+  height: 100%;
+  width: 100%;
+}
 .portfolio .portfolio_elem .portfolio_sub-el div:hover {
-  filter: none;
-}
-.portfolio .portfolio_elem .portfolio_sub-el div:nth-child(1) {
-  background: url("/img/portfolio_2.jpg") no-repeat;
-  background-size: cover;
-}
-.portfolio .portfolio_elem .portfolio_sub-el div:nth-child(2) {
-  background: url("/img/portfolio_3.jpg") no-repeat;
-  background-size: cover;
-}
-.portfolio .portfolio_elem .portfolio_sub-el div:nth-child(3) {
-  background: url("/img/portfolio_4.jpg") no-repeat;
-  background-size: cover;
+  filter: brightness(100%);
 }
 .portfolio .btn-left {
   z-index: 1;
@@ -719,6 +714,7 @@ body {
   z-index: 1;
 }
 .modal_portfolio .modal-main {
+  display: block;
   margin: 0 auto;
   max-width: 600px;
   height: 60%;
