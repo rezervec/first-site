@@ -35,47 +35,42 @@ console.log(portfolio_elem.length)
 console.log( Math.floor(portfolio_window.clientWidth / portfolio_elem[0].clientWidth) )
 
 //////////
-// const modal_portfolio = document.querySelector('.modal_portfolio')
-// const modal_main = document.querySelector('.modal-main')
-// const modal_sub_el = document.querySelectorAll('.modal-sub-el')
+const modal_images = document.querySelector('.modal-img')
+const modal_img = document.querySelectorAll('.modal-img img')
+const modal_portfolio = document.querySelector('.modal_portfolio')
+const portfolio_images = document.querySelectorAll('.portfolio_elem img')
+
 const cross = document.querySelector('.modal_portfolio span')
 
 
-// portfolio_elem.forEach(portfolio_elem => {
-//     portfolio_elem.addEventListener('click', (e) => {
-//         if(e.target.closest('img')) {
-//             modal_main.src = e.target.src;
-//             modal_sub_el.src = portfolio_elem.src;
-//             modal_portfolio.style.display = "block";
-//         }
-//         cross.addEventListener('click', () => {
-//             modal_portfolio.style.display = "none";
-//         });
-//     });
-// });
+for (let i = 0; i < portfolio_elem.length; i++) {
+    portfolio_elem[i].addEventListener('click', (img) => {
+        if (img.target.closest('img')) {
+            modal_img[0].src = img.target.src;
+            modal_portfolio.style.display = 'block';
 
-const modal_portfolio = document.querySelector('.modal_portfolio');
-const modal_main = document.querySelector('.modal-main');
-const modal_sub_el = document.querySelectorAll('.modal-sub-el');
-
-
-for (i = 0; i < portfolio_elem.length; i++) {
-    portfolio_elem[i].addEventListener('click', (elem) => {
-        if (elem.target.closest('img')) {
-            modal_main.src = elem.target.src;
-            var element_click = document.querySelectorAll('.portfolio_elem')[i];
-            var element_images = document.querySelectorAll('.portfolio_elem img');
-            var modal_img_id = 0;
-            for (j = 0; j < 4; j++) {
-                if (element_images[j].img != elem.target) {
-                    modal_sub_el[modal_img_id].src = element_images[j].src;
-                }
+            let term = 1;
+            for(j = 0; j < modal_img.length; j++) {
+                if (img.target != portfolio_images[j+4*i])
+                    modal_img[j+term].src = portfolio_images[j+4*i].src;
+                else term--;
             }
-
-            modal_portfolio.style.display = "block";
-            cross.addEventListener('click', () => {
-                modal_portfolio.style.display = "none";
-            });
         }
     });
 }
+
+modal_images.addEventListener('click', (img_mod) => {
+    if (img_mod.target.closest('img')) {
+        let img_swap = modal_img[0].src;
+        modal_img[0].src = img_mod.target.src;
+        img_mod.target.src = img_swap;
+        console.log('swap')
+    }
+});
+
+cross.addEventListener('click', () =>{
+    modal_portfolio.style.display = 'none';
+    for (let i = 0; i < modal_img; i++) {
+        modal_img[i].src = "";
+    }
+});
