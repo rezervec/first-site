@@ -1,7 +1,7 @@
-const slider = document.querySelector('.slider_ba')
-const img_up = document.querySelector('.slider_ba_img-up img')
+const slider = document.querySelector('.slider_ba_box')
+const img_up = document.querySelector('.slider_ba_img-up')
 const roller = document.querySelector('.slider_ba_roller')
-const box_slider = document.querySelector('.box_slider_ba')
+const box_slider = document.querySelector('.slider_ba')
 const body = document.querySelector('body')
 
 var roller_isActive = false;
