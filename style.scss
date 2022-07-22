@@ -171,7 +171,7 @@ body {
         transition: transform 0.3s;
     }
     
-    
+
     &._active span {width: 0%;}
     &._active::before {top: 50%; transform: rotate(45deg);}
     &._active::after {top: 50%; transform: rotate(-45deg);}
@@ -184,35 +184,36 @@ body {
     position: absolute;
     right: 100px;
     z-index: 1;
-}
 
-.header_logo img {
-    filter: invert(1);
-    width: 100px;
-    margin: auto;
-    display: block;
-    transition: filter 0.5s;
-}
-.header_logo img:hover{filter: invert(0); cursor: pointer;}
-.car_light_left {
-    content: "";
-    width: 7px;
-    position: absolute;
-    left: 30%;
-    bottom: 20%;
-    box-shadow: 0 0 10px 10px rgb(210, 238, 255);
-    border-radius: 100%;
-    transition: box-shadow 1s;
-}
-.car_light_right {
-    content: "";
-    width: 7px;
-    position: absolute;
-    right: 30%;
-    bottom: 20%;
-    box-shadow: 0 0 10px 10px rgb(210, 238, 255);
-    border-radius: 100%;
-    transition: box-shadow 1s;
+    img {
+        filter: invert(1);
+        width: 100px;
+        margin: auto;
+        display: block;
+        transition: filter 0.5s;
+        &:hover {filter: invert(0); cursor: pointer;}
+    }
+
+    .car_light_left {
+        content: "";
+        width: 7px;
+        position: absolute;
+        left: 30%;
+        bottom: 20%;
+        box-shadow: 0 0 10px 10px rgb(210, 238, 255);
+        border-radius: 100%;
+        transition: box-shadow 1s;
+    }
+    .car_light_right {
+        content: "";
+        width: 7px;
+        position: absolute;
+        right: 30%;
+        bottom: 20%;
+        box-shadow: 0 0 10px 10px rgb(210, 238, 255);
+        border-radius: 100%;
+        transition: box-shadow 1s;
+    }
 }
 
 
@@ -234,20 +235,60 @@ $margin_sides: 10%;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 3%;
     justify-content: center;
-}
 
-.services div {
-    overflow: hidden;
-    position: relative;
-    border-radius: 5%;
-}
+    div {
+        overflow: hidden;
+        position: relative;
+        border-radius: 5%;
 
-.services div img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        &::after {
+            font-family: 'Fira Sans Condensed', sans-serif;
+            content: attr(alt);
+            position: absolute;
+            width: auto;
+            height: auto;
+            right: 0;
+            bottom: 10%;
+            font-size: 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 3%;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: bottom 1s, color 1s;
+            z-index: 1;
+        }
+        &:hover::after {bottom: 80%; color: rgb(255, 155, 118);}
+    
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            clip-path: polygon(20% 0%, 100% 0%, 100% 60%, 60% 100%, 0% 100%, 0% 20%);
+            transition: all 1s;
+        }
+        :hover img {clip-path: polygon(0% 0%, 80% 0%, 100% 20%, 100% 100%, 40% 100%, 0% 60%);}
 
+        p {
+            font-family: 'Fira Sans Condensed', sans-serif;
+            position: absolute;
+            margin: 0;
+            left: -100%;
+            bottom: 0;
+            width: 50%;
+            height: auto;
+            border-top-right-radius: 20%;
+            padding: 5%;
+            font-size: auto;
+            font-weight: 300;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: left 1s ease 0.2s;
+            z-index: 1;
+            span {font-weight: 500;}
+        }
+        &:hover p {left:0;}
+    }
+}
 
 .service_cleaning img {
     filter: blur(1px) grayscale(100%);
@@ -334,94 +375,6 @@ $margin_sides: 10%;
     opacity: 0.9;
 }
 
-
-.service_cleaning::after,
-.service_painting::after,
-.service_toning-lamps::after,
-.service_toning::after,
-.service_trim-salon::after,
-.service_xenon::after {
-    font-family: 'Fira Sans Condensed', sans-serif;
-    content: attr(alt);
-    position: absolute;
-    width: auto;
-    height: auto;
-    right: 0;
-    bottom: 10%;
-    font-size: 20px;
-    font-weight: 500;
-    text-transform: uppercase;
-    padding: 3%;
-    background-color: rgba(0, 0, 0, 0.8);
-    transition: bottom 1s, color 1s;
-    z-index: 1;
-}
-.service_cleaning:hover::after,
-.service_painting:hover::after,
-.service_toning-lamps:hover::after,
-.service_toning:hover::after,
-.service_trim-salon:hover::after,
-.service_xenon:hover::after {
-    bottom: 80%;
-    color: rgb(255, 155, 118);
-}
-
-.service_cleaning p,
-.service_painting p,
-.service_toning-lamps p,
-.service_toning p,
-.service_trim-salon p,
-.service_xenon p {
-    font-family: 'Fira Sans Condensed', sans-serif;
-    position: absolute;
-    margin: 0;
-    left: -100%;
-    bottom: 0;
-    width: 50%;
-    height: auto;
-    border-top-right-radius: 20%;
-    padding: 5%;
-    font-size: auto;
-    font-weight: 300;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    transition: left 1s ease 0.2s;
-    z-index: 1;
-}
-.service_cleaning p span,
-.service_painting p span,
-.service_toning-lamps p span,
-.service_toning p span,
-.service_trim-salon p span,
-.service_xenon p span {
-    font-weight: 500;
-}
-.service_cleaning:hover p,
-.service_painting:hover p,
-.service_toning-lamps:hover p,
-.service_toning:hover p,
-.service_trim-salon:hover p,
-.service_xenon:hover p {
-    left:0;
-}
-
-.service_cleaning img,
-.service_painting img,
-.service_toning-lamps img,
-.service_toning img,
-.service_trim-salon img,
-.service_xenon img {
-    clip-path: polygon(20% 0%, 100% 0%, 100% 60%, 60% 100%, 0% 100%, 0% 20%);
-    transition: all 1s;
-}
-.service_cleaning:hover img,
-.service_painting:hover img,
-.service_toning-lamps:hover img,
-.service_toning:hover img,
-.service_trim-salon:hover img,
-.service_xenon:hover img {
-    clip-path: polygon(0% 0%, 80% 0%, 100% 20%, 100% 100%, 40% 100%, 0% 60%);
-}
 
 @media (max-width: 500px) {
     .services {
